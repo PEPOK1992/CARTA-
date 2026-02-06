@@ -7,6 +7,7 @@
     <title>Carta para mi amor</title>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
+        /* Estilos generales */
         * {
             margin: 0;
             padding: 0;
@@ -20,10 +21,10 @@
             justify-content: center;
             align-items: center;
             padding: 20px;
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Roboto', sans-serif; /* Fuente general */
         }
 
-        /* Estilos generales de secciones */
+        /* Estilos de secciones */
         .seccion {
             display: none;
             background-color: #fff;
@@ -45,14 +46,14 @@
             display: block !important;
         }
 
-        /* Títulos y textos */
+        /* Estilos de texto */
         .titulo-principal {
             color: #d63384;
             font-size: 2.5rem;
             line-height: 1.4;
             margin-bottom: 30px;
             animation: pulse 2s infinite;
-            font-family: 'Dancing Script', cursive;
+            font-family: 'Dancing Script', cursive; /* Fuente decorativa */
             font-weight: 700;
         }
 
@@ -61,7 +62,7 @@
             font-size: 1.3rem;
             line-height: 1.8;
             margin: 20px 0;
-            font-family: 'Dancing Script', cursive;
+            font-family: 'Dancing Script', cursive; /* Fuente decorativa */
         }
 
         .texto-largo {
@@ -70,17 +71,18 @@
             line-height: 1.8;
             text-align: justify;
             margin: 20px 0;
+            font-family: 'Dancing Script', cursive; /* Fuente decorativa */
         }
 
         .pregunta {
             color: #d63384;
             font-size: 1.5rem;
             margin: 30px 0;
-            font-family: 'Dancing Script', cursive;
+            font-family: 'Dancing Script', cursive; /* Fuente decorativa */
             font-weight: bold;
         }
 
-        /* Fotos */
+        /* Estilos de fotos */
         .foto-contenedor {
             margin: 20px 0;
             text-align: center;
@@ -94,13 +96,13 @@
         }
 
         .foto-texto {
-            font-family: 'Dancing Script', cursive;
+            font-family: 'Dancing Script', cursive; /* Fuente decorativa */
             color: #d63384;
             margin-top: 10px;
             font-size: 1.2rem;
         }
 
-        /* Corazones clícables */
+        /* Estilos de corazones clicables */
         .corazon-continuar {
             display: flex;
             flex-direction: column;
@@ -119,7 +121,7 @@
         }
 
         .texto-continuar {
-            font-family: 'Dancing Script', cursive;
+            font-family: 'Dancing Script', cursive; /* Fuente decorativa */
             color: #dc3545;
             font-size: 1.2rem;
             margin-top: 10px;
@@ -129,7 +131,7 @@
             transform: scale(1.1);
         }
 
-        /* Botones */
+        /* Estilos de botones */
         .opciones {
             display: flex;
             gap: 30px;
@@ -144,7 +146,7 @@
             border: none;
             font-size: 1rem;
             cursor: pointer;
-            font-family: 'Dancing Script', cursive;
+            font-family: 'Dancing Script', cursive; /* Fuente decorativa */
             font-weight: 700;
         }
 
@@ -164,7 +166,7 @@
             position: relative;
         }
 
-        /* Pantalla final */
+        /* Estilos de pantalla final */
         .pantalla-final {
             display: none;
             position: fixed;
@@ -184,7 +186,7 @@
         .texto-final {
             font-size: 2.5rem;
             margin-bottom: 30px;
-            font-family: 'Dancing Script', cursive;
+            font-family: 'Dancing Script', cursive; /* Fuente decorativa */
             font-weight: 700;
         }
 
@@ -195,7 +197,6 @@
             background-color: white;
             clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
             animation: flotar 3s ease-in-out infinite;
-            z-index: 5;
         }
 
         /* Animaciones */
@@ -215,107 +216,5 @@
             100% { transform: translateY(-20px) rotate(360deg); }
         }
 
-        /* Responsivo */
-        @media (max-width: 480px) {
-            .titulo-principal {
-                font-size: 2rem;
-            }
-
-            .foto-personalizada {
-                max-width: 90%;
-            }
-        }
-    </style>
-</head>
-<body>
-    <!-- Sección 1 -->
-    <div class="seccion-1 mostrar" id="seccion1">
-        <h1 class="titulo-principal">TE AMO<br>AMOR DE MI VIDA</h1>
-        
-        <div class="foto-contenedor">
-            <img src="https://pepok1992.github.io/CARTA-/foto1.jpg" alt="Foto especial" class="foto-personalizada">
-            <p class="foto-texto">Nuestro primer momento juntos ❤️</p>
-        </div>
-
-        <div class="corazon-continuar" onclick="mostrarSeccion(2)">
-            <div class="corazon-icono"></div>
-            <span class="texto-continuar">Continuar</span>
-        </div>
-    </div>
-
-    <!-- Sección 2 -->
-    <div class="seccion" id="seccion2">
-        <p class="frase">
-            "Gracias por existir en mi vida, por ser mi refugio cuando el mundo se pone complicado, por llenar mis días de sonrisas y mi corazón de paz. Eres el mejor regalo que la vida me ha dado."
-        </p>
-        
-        <div class="foto-contenedor">
-            <img src="https://pepok1992.github.io/CARTA-/foto2.jpg" alt="Foto de nosotros" class="foto-personalizada">
-            <p class="foto-texto">Cuando sonreímos juntos 😊</p>
-        </div>
-
-        <div class="corazon-continuar" onclick="mostrarSeccion(3)">
-            <div class="corazon-icono"></div>
-            <span class="texto-continuar">Continuar</span>
-        </div>
-    </div>
-
-    <!-- Sección 3 -->
-    <div class="seccion" id="seccion3">
-        <p class="texto-largo">
-            Mi amor, desde que llegaste a mi lado, todo tiene sentido. Me encanta cómo me miras cuando piensas que no te veo, cómo te ries a carcajadas con mis chistes tontos, cómo te preocupas por mí sin necesidad de decir nada. Eres la persona que me hace querer ser mejor cada día, que me acepta tal como soy y que me hace sentir completo. Cada momento a tu lado es un sueño hecho realidad.
-        </p>
-        
-        <div class="foto-contenedor">
-            <img src="https://pepok1992.github.io/CARTA-/foto3.jpg" alt="Foto favorita" class="foto-personalizada">
-            <p class="foto-texto">Mi lugar favorito está a tu lado 🥰</p>
-        </div>
-
-        <p class="pregunta">¿Quieres ser mi Valentín?</p>
-        <div class="opciones">
-            <button class="btn btn-si" onclick="mostrarPantallaFinal()">SÍ, CLARO QUE SÍ ❤️</button>
-            <button class="btn btn-no" onclick="moverBotonNo(event)">No...</button>
-        </div>
-    </div>
-
-    <!-- Pantalla final -->
-    <div class="pantalla-final" id="pantallaFinal">
-        <div class="texto-final">TE AMOOOOOOO!</div>
-        
-        <div class="foto-contenedor" style="z-index: 10;">
-            <img src="https://pepok1992.github.io/CARTA-/foto4.jpg" alt="Nuestro amor" class="foto-personalizada" style="max-width: 70%;">
-        </div>
-    </div>
-
-    <script>
-        function mostrarSeccion(num) {
-            document.querySelectorAll('.seccion, .seccion-1').forEach(s => s.classList.remove('mostrar'));
-            document.getElementById(`seccion${num}`).classList.add('mostrar');
-        }
-
-        function moverBotonNo(event) {
-            const btn = event.target;
-            const maxX = window.innerWidth - btn.offsetWidth - 20;
-            const maxY = window.innerHeight - btn.offsetHeight - 20;
-            btn.style.left = `${Math.random() * maxX}px`;
-            btn.style.top = `${Math.random() * maxY}px`;
-            btn.innerText = '¡No puedes escapar! 😜';
-        }
-
-        function mostrarPantallaFinal() {
-            document.querySelectorAll('.seccion, .seccion-1').forEach(s => s.classList.remove('mostrar'));
-            const final = document.getElementById('pantallaFinal');
-            final.style.display = 'flex';
-            
-            // Crear corazones flotantes
-            for(let i=0; i<30; i++) {
-                const corazon = document.createElement('div');
-                corazon.classList.add('corazon-flotante');
-                corazon.style.left = `${Math.random() * 100}vw`;
-                corazon.style.animationDelay = `${Math.random() * 5}s`;
-                final.appendChild(corazon);
-            }
-        }
-    </script>
-</body>
-</html>
+        /* Media queries para responsividad */
+        @media (max-width:
