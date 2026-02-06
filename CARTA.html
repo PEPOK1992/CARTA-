@@ -19,14 +19,14 @@
             min-height: 100vh;
             display: flex;
             justify-content: center;
-            align-items: flex-start; /* Ajuste para evitar desbordamiento */
+            align-items: flex-start;
             padding: 20px;
             font-family: 'Roboto', sans-serif;
-            overflow-x: hidden; /* Evita scroll horizontal */
-            overflow-y: auto; /* Permite scroll vertical solo si es necesario */
+            overflow-x: hidden;
+            overflow-y: auto;
         }
 
-        /* Contenedor principal para asegurar que solo una sección se muestre */
+        /* Contenedor principal */
         .contenedor-principal {
             width: 100%;
             max-width: 600px;
@@ -112,7 +112,7 @@
             font-size: 1.2rem;
         }
 
-        /* Estilos de botón continuar (estrella) */
+        /* Estilos de botón continuar (corazón) */
         .corazon-continuar {
             display: flex;
             flex-direction: column;
@@ -126,7 +126,7 @@
             width: 50px;
             height: 50px;
             background-color: #d63384;
-            clip-path: polygon(50% 0%, 60% 40%, 100% 40%, 67% 60%, 75% 100%, 50% 75%, 25% 100%, 33% 60%, 0% 40%, 40% 40%); /* Forma de estrella */
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
             animation: latir 0.8s infinite alternate;
         }
 
@@ -270,59 +270,83 @@
     <div class="contenedor-principal">
         <!-- Sección 1 -->
         <div class="seccion-1 mostrar" id="seccion1">
-            <h1 class="titulo-principal">TE AMO<br>AMOR DE MI VIDA</h1>
-            
-            <div class="foto-contenedor">
-                <img src="https://i.imgur.com/LfzhbS2.jpeg" alt="Foto especial" class="foto-personalizada foto-seccion-1 foto-animada">
-                <p class="foto-texto">Nuestro primer momento juntos ❤️</p>
-            </div>
-
+            <h1 class="titulo-principal">¡Holaaaaa, mi amorsoteee!</h1>
             <div class="corazon-continuar" onclick="mostrarSeccion(2)">
                 <div class="corazon-icono"></div>
-                <span class="texto-continuar">Continuar</span>
+                <span class="texto-continuar">Siguiente</span>
             </div>
         </div>
 
         <!-- Sección 2 -->
         <div class="seccion" id="seccion2">
-            <p class="frase">
-                "Gracias por existir en mi vida, por ser mi refugio cuando el mundo se pone complicado, por llenar mis días de sonrisas y mi corazón de paz. Eres el mejor regalo que la vida me ha dado."
-            </p>
-            
+            <h2 class="titulo-principal">TE AMO</h2>
             <div class="foto-contenedor">
-                <img src="https://i.imgur.com/jkjV2qP.jpeg" alt="Foto de nosotros" class="foto-personalizada foto-animada">
-                <p class="foto-texto">Cuando sonreímos juntos 😊</p>
+                <img src="https://i.imgur.com/LfzhbS2.jpeg" alt="Nosotros" class="foto-personalizada foto-animada">
+                <p class="foto-texto">El día que mi vida cambió para siempre.</p>
             </div>
-
+            <p class="texto-largo">
+                Desde que te conocí, cada día es una aventura. Gracias por llegar a mi vida.
+            </p>
             <div class="corazon-continuar" onclick="mostrarSeccion(3)">
                 <div class="corazon-icono"></div>
-                <span class="texto-continuar">Continuar</span>
+                <span class="texto-continuar">Siguiente</span>
             </div>
         </div>
 
         <!-- Sección 3 -->
         <div class="seccion" id="seccion3">
-            <p class="texto-largo">
-                Mi amor, desde que llegaste a mi lado, todo tiene sentido. Me encanta cómo me miras cuando piensas que no te veo, cómo te ries a carcajadas con mis chistes tontos, cómo te preocupas por mí sin necesidad de decir nada. Eres la persona que me hace querer ser mejor cada día, que me acepta tal como soy y que me hace sentir completo. Cada momento a tu lado es un sueño hecho realidad.
-            </p>
-            
             <div class="foto-contenedor">
-                <img src="https://i.imgur.com/LfzhbS2.jpeg" alt="Foto favorita" class="foto-personalizada foto-animada">
-                <p class="foto-texto">Mi lugar favorito está a tu lado 🥰</p>
+                <img src="https://i.imgur.com/LfzhbS2.jpeg" alt="Juntos" class="foto-personalizada foto-animada">
+                <p class="foto-texto">Tú haces que todo sea mejor.</p>
             </div>
+            <p class="texto-largo">
+                Agradezco cada cosa que haces por mí, cada detalle, cada palabra. Cambiaste mi mundo por completo.
+            </p>
+            <div class="corazon-continuar" onclick="mostrarSeccion(4)">
+                <div class="corazon-icono"></div>
+                <span class="texto-continuar">Siguiente</span>
+            </div>
+        </div>
 
-            <p class="pregunta">¿Quieres ser mi Valentín?</p>
-            <div class="opciones">
-                <button class="btn btn-si" onclick="mostrarPantallaFinal()">SÍ, CLARO QUE SÍ ❤️</button>
-                <button class="btn btn-no" onclick="moverBotonNo(event)">No...</button>
+        <!-- Sección 4 -->
+        <div class="seccion" id="seccion4">
+            <p class="texto-largo">
+                Perdón por los malos ratos, por las veces que no supe cómo actuar, por los errores que cometí.
+            </p>
+            <div class="corazon-continuar" onclick="mostrarSeccion(5)">
+                <div class="corazon-icono"></div>
+                <span class="texto-continuar">Siguiente</span>
+            </div>
+        </div>
+
+        <!-- Sección 5 -->
+        <div class="seccion" id="seccion5">
+            <p class="texto-largo">
+                Prometo que, a pesar de la distancia, siempre estarás en mi mente y en mi corazón. Te esperaré con el mismo amor, el mismo sentimiento, y cuando te vuelva a ver, te miraré con los mismos ojos de cuando me enamoré.
+            </p>
+            <div class="corazon-continuar" onclick="mostrarSeccion(6)">
+                <div class="corazon-icono"></div>
+                <span class="texto-continuar">Siguiente</span>
+            </div>
+        </div>
+
+        <!-- Sección 6 -->
+        <div class="seccion" id="seccion6">
+            <p class="texto-largo">
+                Prometemos no pelear, y si pasa, nos arreglaremos rápido. Prometemos dormir siempre en llamada, que si algo nos molesta, siempre lo hablaremos. Prometemos no dejarnos de amar.
+            </p>
+            <div class="corazon-continuar" onclick="mostrarPantallaFinal()">
+                <div class="corazon-icono"></div>
+                <span class="texto-continuar">Acepto</span>
             </div>
         </div>
 
         <!-- Pantalla final -->
         <div class="pantalla-final" id="pantallaFinal">
-            <div class="texto-final">TE AMOOOOOOO!</div>
-            
+            <div class="texto-final">TE AMO, AMOR DE MI VIDA ❤️</div>
             <div class="foto-contenedor" style="z-index: 10;">
+                <img src="https://i.imgur.com/LfzhbS2.jpeg" alt="Nuestro amor" class="foto-personalizada foto-animada" style="max-width: 70%;">
+                <img src="https://i.imgur.com/LfzhbS2.jpeg" alt="Nuestro amor" class="foto-personalizada foto-animada" style="max-width: 70%;">
                 <img src="https://i.imgur.com/LfzhbS2.jpeg" alt="Nuestro amor" class="foto-personalizada foto-animada" style="max-width: 70%;">
             </div>
         </div>
@@ -333,16 +357,13 @@
 
         function mostrarSeccion(num) {
             if (num > seccionActual) {
-                // Oculta TODAS las secciones primero
                 document.querySelectorAll('.seccion, .seccion-1').forEach(s => {
                     s.classList.remove('mostrar');
                     s.style.display = 'none';
                 });
-                // Muestra solo la sección seleccionada
                 const seccionDestino = document.getElementById(`seccion${num}`);
                 seccionDestino.style.display = 'block';
                 seccionDestino.classList.add('mostrar');
-                // Desplaza la pantalla hacia arriba
                 window.scrollTo({ top: 0, behavior: 'smooth' });
                 seccionActual = num;
             }
@@ -364,14 +385,7 @@
             });
             const final = document.getElementById('pantallaFinal');
             final.style.display = 'flex';
-            
-            for(let i=0; i<30; i++) {
-                const corazon = document.createElement('div');
-                corazon.classList.add('corazon-flotante');
-                corazon.style.left = `${Math.random() * 100}vw`;
-                corazon.style.animationDelay = `${Math.random() * 5}s`;
-                final.appendChild(corazon);
-            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
 </body>
