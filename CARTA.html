@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Para mi amor</title>
-    <!-- Fuentes decorativas de Google Fonts -->
+    <title>Carta para mi amor</title>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -20,11 +19,10 @@
             justify-content: center;
             align-items: center;
             padding: 20px;
-            transition: all 0.5s ease;
             font-family: 'Roboto', sans-serif;
         }
 
-        /* Sección 1 */
+        /* Sección 1: Título principal */
         .seccion-1 {
             text-align: center;
             padding: 30px;
@@ -35,13 +33,26 @@
             color: #d63384;
             font-size: 3rem;
             line-height: 1.4;
-            margin-bottom: 50px;
+            margin-bottom: 20px;
             animation: pulse 2s infinite;
             font-family: 'Dancing Script', cursive;
             font-weight: 700;
         }
 
-        /* Corazón clicable con texto "Continuar" */
+        /* Contenedor de fotos */
+        .foto-contenedor {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .foto-personalizada {
+            max-width: 80%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(214, 51, 132, 0.2);
+        }
+
+        /* Corazón clicable con texto */
         .corazon-continuar {
             display: flex;
             flex-direction: column;
@@ -53,7 +64,8 @@
         }
 
         .corazon-icono {
-            font-size: 4rem;
+            width: 60px;
+            height: 60px;
             display: block;
             animation: latir 0.8s infinite alternate;
         }
@@ -90,7 +102,7 @@
             color: #333;
             font-size: 1.5rem;
             line-height: 1.8;
-            margin-bottom: 40px;
+            margin: 20px 0;
             font-family: 'Dancing Script', cursive;
         }
 
@@ -98,7 +110,7 @@
             color: #333;
             font-size: 1.2rem;
             line-height: 1.8;
-            margin-bottom: 40px;
+            margin: 20px 0;
             text-align: justify;
             font-family: 'Roboto', sans-serif;
         }
@@ -106,7 +118,7 @@
         .pregunta {
             color: #d63384;
             font-size: 1.8rem;
-            margin-bottom: 40px;
+            margin: 30px 0;
             font-weight: bold;
             font-family: 'Dancing Script', cursive;
         }
@@ -117,6 +129,7 @@
             gap: 30px;
             justify-content: center;
             flex-wrap: wrap;
+            margin: 20px 0;
         }
 
         .btn {
@@ -170,18 +183,17 @@
 
         .texto-final {
             font-size: 3.5rem;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             font-family: 'Dancing Script', cursive;
             font-weight: 700;
             z-index: 10;
         }
 
-        /* Corazones flotantes */
         .corazon-flotante {
             position: absolute;
-            font-size: 1.5rem;
+            width: 25px;
+            height: 25px;
             animation: flotar 3s ease-in-out infinite;
-            opacity: 0.8;
             z-index: 5;
         }
 
@@ -219,7 +231,8 @@
             }
 
             .corazon-icono {
-                font-size: 3rem;
+                width: 50px;
+                height: 50px;
             }
 
             .texto-continuar {
@@ -246,35 +259,65 @@
             .texto-final {
                 font-size: 2.5rem;
             }
+
+            .corazon-flotante {
+                width: 20px;
+                height: 20px;
+            }
+
+            .foto-personalizada {
+                max-width: 90%;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Sección 1: Título principal -->
+    <!-- SECCIÓN 1: TÍTULO PRINCIPAL -->
     <div class="seccion-1 mostrar" id="seccion1">
         <h1 class="titulo-principal">TE AMO<br>AMOR DE MI VIDA</h1>
+        
+        <!-- ESPACIO PARA FOTO 1 -->
+        <div class="foto-contenedor">
+            <img src="AQUI_PONER_LINK_DE_TU_FOTO_1" alt="Foto especial para ti" class="foto-personalizada">
+            <p style="font-family: 'Dancing Script', cursive; color: #d63384; margin-top: 10px;">Nuestro primer momento juntos ??</p>
+        </div>
+
         <div class="corazon-continuar" onclick="mostrarSeccion(2)">
-            <span class="corazon-icono">??</span>
+            <img src="https://cdn-icons-png.flaticon.com/512/1077/1077037.png" alt="Corazón" class="corazon-icono">
             <span class="texto-continuar">Continuar</span>
         </div>
     </div>
 
-    <!-- Sección 2: Frase de agradecimiento -->
+    <!-- SECCIÓN 2: FRASE DE AGRADECIMIENTO -->
     <div class="seccion" id="seccion2">
         <p class="frase">
             "Gracias por existir en mi vida, por ser mi refugio cuando el mundo se pone complicado, por llenar mis días de sonrisas y mi corazón de paz. Eres el mejor regalo que la vida me ha dado."
         </p>
+        
+        <!-- ESPACIO PARA FOTO 2 -->
+        <div class="foto-contenedor">
+            <img src="AQUI_PONER_LINK_DE_TU_FOTO_2" alt="Foto de nosotros" class="foto-personalizada">
+            <p style="font-family: 'Dancing Script', cursive; color: #d63384; margin-top: 10px;">Cuando sonreímos juntos ??</p>
+        </div>
+
         <div class="corazon-continuar" onclick="mostrarSeccion(3)">
-            <span class="corazon-icono">??</span>
+            <img src="https://cdn-icons-png.flaticon.com/512/1077/1077037.png" alt="Corazón" class="corazon-icono">
             <span class="texto-continuar">Continuar</span>
         </div>
     </div>
 
-    <!-- Sección 3: Texto lindo y pregunta -->
+    <!-- SECCIÓN 3: TEXTO LARGO Y PREGUNTA -->
     <div class="seccion" id="seccion3">
         <p class="texto-largo">
             Mi amor, desde que llegaste a mi lado, todo tiene sentido. Me encanta cómo me miras cuando piensas que no te veo, cómo te ries a carcajadas con mis chistes tontos, cómo te preocupas por mí sin necesidad de decir nada. Eres la persona que me hace querer ser mejor cada día, que me acepta tal como soy y que me hace sentir completo. Cada momento a tu lado es un sueño hecho realidad, y no puedo imaginar un futuro donde no estés conmigo.
         </p>
+        
+        <!-- ESPACIO PARA FOTO 3 -->
+        <div class="foto-contenedor">
+            <img src="AQUI_PONER_LINK_DE_TU_FOTO_3" alt="Nuestra foto favorita" class="foto-personalizada">
+            <p style="font-family: 'Dancing Script', cursive; color: #d63384; margin-top: 10px;">Mi lugar favorito está a tu lado ??</p>
+        </div>
+
         <p class="pregunta">¿Quieres ser mi Valentín?</p>
         <div class="opciones">
             <button class="btn btn-si" onclick="mostrarPantallaFinal()">SÍ, CLARO QUE SÍ ??</button>
@@ -282,9 +325,14 @@
         </div>
     </div>
 
-    <!-- Pantalla final -->
+    <!-- PANTALLA FINAL -->
     <div class="pantalla-final" id="pantallaFinal">
         <div class="texto-final">TE AMOOOOOOO!</div>
+        
+        <!-- ESPACIO PARA FOTO 4 -->
+        <div class="foto-contenedor" style="z-index: 10; margin: 20px 0;">
+            <img src="AQUI_PONER_LINK_DE_TU_FOTO_4" alt="Nuestro amor" class="foto-personalizada" style="max-width: 70%;">
+        </div>
     </div>
 
     <script>
@@ -296,7 +344,7 @@
             document.getElementById(`seccion${numSeccion}`).classList.add('mostrar');
         }
 
-        // Mover botón NO cuando se intenta hacer clic
+        // Mover botón NO
         function moverBotonNo(event) {
             const boton = event.target;
             const maxX = window.innerWidth - boton.offsetWidth - 20;
@@ -311,20 +359,21 @@
             boton.innerText = '¡No puedes escapar! ??';
         }
 
-        // Crear corazones flotantes en la pantalla final
+        // Crear corazones flotantes
         function crearCorazonesFlotantes() {
             const pantalla = document.getElementById('pantallaFinal');
             const cantidad = 30;
 
             for(let i=0; i<cantidad; i++) {
-                const corazon = document.createElement('div');
+                const corazon = document.createElement('img');
                 corazon.classList.add('corazon-flotante');
-                corazon.innerText = '??';
+                corazon.src = 'https://cdn-icons-png.flaticon.com/512/1077/1077037.png';
+                corazon.alt = 'Corazón flotante';
                 
-                // Posición y tiempo aleatorio
                 corazon.style.left = `${Math.random() * 100}vw`;
                 corazon.style.animationDelay = `${Math.random() * 5}s`;
-                corazon.style.fontSize = `${1 + Math.random() * 2}rem`;
+                corazon.style.width = `${15 + Math.random() * 15}px`;
+                corazon.style.height = 'auto';
                 
                 pantalla.appendChild(corazon);
             }
