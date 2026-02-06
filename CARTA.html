@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Para mi amor</title>
+    <!-- Fuentes decorativas de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
@@ -20,34 +21,52 @@
             align-items: center;
             padding: 20px;
             transition: all 0.5s ease;
+            font-family: 'Roboto', sans-serif;
         }
 
         /* Sección 1 */
         .seccion-1 {
             text-align: center;
             padding: 30px;
+            width: 100%;
         }
 
         .titulo-principal {
             color: #d63384;
-            font-size: 2.5rem;
+            font-size: 3rem;
             line-height: 1.4;
             margin-bottom: 50px;
             animation: pulse 2s infinite;
+            font-family: 'Dancing Script', cursive;
+            font-weight: 700;
         }
 
-        /* Corazón clicable */
+        /* Corazón clicable con texto "Continuar" */
         .corazon-continuar {
-            font-size: 4rem;
-            color: #dc3545;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             cursor: pointer;
             transition: all 0.3s ease;
-            display: inline-block;
+            color: #dc3545;
+            margin-top: 20px;
+        }
+
+        .corazon-icono {
+            font-size: 4rem;
+            display: block;
+            animation: latir 0.8s infinite alternate;
+        }
+
+        .texto-continuar {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            font-family: 'Dancing Script', cursive;
+            font-weight: 700;
         }
 
         .corazon-continuar:hover {
-            transform: scale(1.2);
-            animation: latir 0.8s infinite alternate;
+            transform: scale(1.1);
         }
 
         /* Secciones generales */
@@ -69,24 +88,27 @@
 
         .frase {
             color: #333;
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             line-height: 1.8;
             margin-bottom: 40px;
+            font-family: 'Dancing Script', cursive;
         }
 
         .texto-largo {
             color: #333;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             line-height: 1.8;
             margin-bottom: 40px;
             text-align: justify;
+            font-family: 'Roboto', sans-serif;
         }
 
         .pregunta {
             color: #d63384;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             margin-bottom: 40px;
             font-weight: bold;
+            font-family: 'Dancing Script', cursive;
         }
 
         /* Botones de opción */
@@ -104,6 +126,8 @@
             font-size: 1.2rem;
             cursor: pointer;
             transition: all 0.3s ease;
+            font-family: 'Dancing Script', cursive;
+            font-weight: 700;
         }
 
         .btn-si {
@@ -122,17 +146,21 @@
             position: relative;
         }
 
-        /* Pantalla final */
+        /* Pantalla final con corazones flotantes */
         .pantalla-final {
             display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #d63384;
+            color: white;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            height: 100vh;
-            width: 100%;
-            background-color: #d63384;
-            color: white;
+            overflow: hidden;
         }
 
         .pantalla-final.mostrar {
@@ -141,13 +169,20 @@
         }
 
         .texto-final {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin-bottom: 30px;
+            font-family: 'Dancing Script', cursive;
+            font-weight: 700;
+            z-index: 10;
         }
 
-        .corazones-final {
-            font-size: 2rem;
-            animation: latir 0.5s infinite alternate;
+        /* Corazones flotantes */
+        .corazon-flotante {
+            position: absolute;
+            font-size: 1.5rem;
+            animation: flotar 3s ease-in-out infinite;
+            opacity: 0.8;
+            z-index: 5;
         }
 
         /* Animaciones */
@@ -172,18 +207,27 @@
             100% { opacity: 1; transform: scale(1); }
         }
 
+        @keyframes flotar {
+            0% { transform: translateY(100vh) rotate(0deg); }
+            100% { transform: translateY(-20px) rotate(360deg); }
+        }
+
         /* Responsivo */
         @media (max-width: 480px) {
             .titulo-principal {
-                font-size: 1.8rem;
+                font-size: 2.2rem;
             }
 
-            .corazon-continuar {
+            .corazon-icono {
                 font-size: 3rem;
             }
 
+            .texto-continuar {
+                font-size: 1rem;
+            }
+
             .frase {
-                font-size: 1.1rem;
+                font-size: 1.3rem;
             }
 
             .texto-largo {
@@ -191,7 +235,7 @@
             }
 
             .pregunta {
-                font-size: 1.2rem;
+                font-size: 1.5rem;
             }
 
             .btn {
@@ -200,7 +244,7 @@
             }
 
             .texto-final {
-                font-size: 2rem;
+                font-size: 2.5rem;
             }
         }
     </style>
@@ -209,7 +253,10 @@
     <!-- Sección 1: Título principal -->
     <div class="seccion-1 mostrar" id="seccion1">
         <h1 class="titulo-principal">TE AMO<br>AMOR DE MI VIDA</h1>
-        <div class="corazon-continuar" onclick="mostrarSeccion(2)">??</div>
+        <div class="corazon-continuar" onclick="mostrarSeccion(2)">
+            <span class="corazon-icono">??</span>
+            <span class="texto-continuar">Continuar</span>
+        </div>
     </div>
 
     <!-- Sección 2: Frase de agradecimiento -->
@@ -217,7 +264,10 @@
         <p class="frase">
             "Gracias por existir en mi vida, por ser mi refugio cuando el mundo se pone complicado, por llenar mis días de sonrisas y mi corazón de paz. Eres el mejor regalo que la vida me ha dado."
         </p>
-        <div class="corazon-continuar" onclick="mostrarSeccion(3)">??</div>
+        <div class="corazon-continuar" onclick="mostrarSeccion(3)">
+            <span class="corazon-icono">??</span>
+            <span class="texto-continuar">Continuar</span>
+        </div>
     </div>
 
     <!-- Sección 3: Texto lindo y pregunta -->
@@ -235,17 +285,14 @@
     <!-- Pantalla final -->
     <div class="pantalla-final" id="pantallaFinal">
         <div class="texto-final">TE AMOOOOOOO!</div>
-        <div class="corazones-final">??????????</div>
     </div>
 
     <script>
         // Mostrar sección correspondiente
         function mostrarSeccion(numSeccion) {
-            // Ocultar todas las secciones
             document.querySelectorAll('.seccion, .seccion-1').forEach(seccion => {
                 seccion.classList.remove('mostrar');
             });
-            // Mostrar la sección seleccionada
             document.getElementById(`seccion${numSeccion}`).classList.add('mostrar');
         }
 
@@ -264,12 +311,33 @@
             boton.innerText = '¡No puedes escapar! ??';
         }
 
+        // Crear corazones flotantes en la pantalla final
+        function crearCorazonesFlotantes() {
+            const pantalla = document.getElementById('pantallaFinal');
+            const cantidad = 30;
+
+            for(let i=0; i<cantidad; i++) {
+                const corazon = document.createElement('div');
+                corazon.classList.add('corazon-flotante');
+                corazon.innerText = '??';
+                
+                // Posición y tiempo aleatorio
+                corazon.style.left = `${Math.random() * 100}vw`;
+                corazon.style.animationDelay = `${Math.random() * 5}s`;
+                corazon.style.fontSize = `${1 + Math.random() * 2}rem`;
+                
+                pantalla.appendChild(corazon);
+            }
+        }
+
         // Mostrar pantalla final
         function mostrarPantallaFinal() {
             document.querySelectorAll('.seccion, .seccion-1').forEach(seccion => {
                 seccion.classList.remove('mostrar');
             });
-            document.getElementById('pantallaFinal').classList.add('mostrar');
+            const pantallaFinal = document.getElementById('pantallaFinal');
+            pantallaFinal.classList.add('mostrar');
+            crearCorazonesFlotantes();
         }
     </script>
 </body>
