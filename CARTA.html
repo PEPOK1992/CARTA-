@@ -24,10 +24,6 @@
             font-family: 'Roboto', sans-serif;
             overflow-x: hidden;
             overflow-y: auto;
-            background-image: url('https://www.xtrafondos.com/wallpapers/vertical/campo-de-tulipanes-rosas-11687.jpg'); /* Fondo con flores */
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center center;
         }
 
         /* Contenedor principal */
@@ -40,7 +36,7 @@
         /* Estilos de secciones */
         .seccion {
             display: none;
-            background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semi-transparente */
+            background-color: #fff;
             width: 100%;
             padding: 40px 30px;
             border-radius: 15px;
@@ -69,7 +65,6 @@
             animation: pulse 2s infinite;
             font-family: 'Dancing Script', cursive;
             font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .frase {
@@ -78,7 +73,6 @@
             line-height: 1.8;
             margin: 20px 0;
             font-family: 'Dancing Script', cursive;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
         }
 
         .texto-largo {
@@ -88,7 +82,6 @@
             text-align: justify;
             margin: 20px 0;
             font-family: 'Dancing Script', cursive;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
         }
 
         .pregunta {
@@ -97,7 +90,6 @@
             margin: 30px 0;
             font-family: 'Dancing Script', cursive;
             font-weight: bold;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         /* Estilos de fotos */
@@ -110,12 +102,7 @@
             max-width: 80%;
             height: auto;
             border-radius: 15px;
-            box-shadow: 0 0 15px rgba(214, 51, 132, 0.2);
-            transition: transform 0.3s ease;
-        }
-
-        .foto-personalizada:hover {
-            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(214, 51, 132, 0.2);
         }
 
         .foto-texto {
@@ -123,7 +110,6 @@
             color: #d63384;
             margin-top: 10px;
             font-size: 1.2rem;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
         }
 
         /* Estilos de botón continuar (corazón) */
@@ -149,7 +135,6 @@
             color: #d63384;
             font-size: 1.2rem;
             margin-top: 10px;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
         }
 
         .corazon-continuar:hover {
@@ -173,7 +158,7 @@
             cursor: pointer;
             font-family: 'Dancing Script', cursive;
             font-weight: 700;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
         }
 
         .btn-si {
@@ -200,7 +185,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(214, 51, 132, 0.9); /* Fondo rosa semi-transparente */
+            background-color: #d63384;
             color: white;
             flex-direction: column;
             justify-content: center;
@@ -214,7 +199,6 @@
             margin-bottom: 30px;
             font-family: 'Dancing Script', cursive;
             font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
         }
 
         .corazon-flotante {
@@ -285,20 +269,29 @@
         /* Estilos para la última sección */
         .pantalla-final .foto-contenedor {
             display: flex;
-            flex-direction: row; /* Alinear las imágenes horizontalmente */
-            justify-content: center; /* Centrar las imágenes */
+            flex-direction: row;
+            justify-content: center;
             align-items: center;
-            flex-wrap: wrap; /* Permitir que las imágenes se envuelvan a la siguiente línea */
+            flex-wrap: wrap;
         }
 
         .pantalla-final .foto-personalizada {
-            max-width: 30%; /* Imágenes más pequeñas */
-            margin: 10px; /* Espacio entre las imágenes */
+            max-width: 30%;
+            margin: 10px;
         }
 
         .pantalla-final .texto-final {
-            font-size: 2rem; /* Ajustar el tamaño del texto */
+            font-size: 2rem;
             margin-bottom: 20px;
+        }
+
+        /* Estilos específicos para la sección 1 */
+        .seccion-1 .titulo-principal {
+            font-size: 3rem;
+        }
+
+        .seccion-1 .foto-contenedor {
+            margin-bottom: 30px;
         }
     </style>
 </head>
@@ -306,6 +299,9 @@
     <div class="contenedor-principal">
         <!-- Sección 1 -->
         <div class="seccion-1 mostrar" id="seccion1">
+            <div class="foto-contenedor">
+                <img src="https://i.imgur.com/LfzhbS2.jpeg" alt="Imagen de la sección 1" class="foto-personalizada">
+            </div>
             <h1 class="titulo-principal">¡Holaaaaa, mi amorsoteee!</h1>
             <div class="corazon-continuar" onclick="mostrarSeccion(2)">
                 <div class="corazon-icono"></div>
@@ -371,33 +367,46 @@
             <p class="texto-largo">
                 Prometemos no pelear, y si pasa, nos arreglaremos rápido. Prometemos dormir siempre en llamada, que si algo nos molesta, siempre lo hablaremos. Prometemos no dejarnos de amar.
             </p>
-            <div class="corazon-continuar" onclick="mostrarPantallaFinal()">
+            <div class="corazon-continuar" onclick="mostrarSeccion(7)">
                 <div class="corazon-icono"></div>
-                <span class="texto-continuar">Acepto</span>
+                <span class="texto-continuar">Siguiente</span>
             </div>
         </div>
 
-        <!-- Pantalla final -->
-        <div class="pantalla-final" id="pantallaFinal">
-            <div class="texto-final">TE AMO, AMOR DE MI VIDA ❤️</div>
-            <div class="foto-contenedor" style="z-index: 10;">
-                <img src="https://i.imgur.com/LfzhbS2.jpeg" alt="Nuestro amor" class="foto-personalizada foto-animada">
-                <img src="https://i.imgur.com/LfzhbS2.jpeg" alt="Nuestro amor" class="foto-personalizada foto-animada">
-                <img src="https://i.imgur.com/LfzhbS2.jpeg" alt="Nuestro amor" class="foto-personalizada foto-animada">
+        <!-- Sección 7 (NUEVA) -->
+        <div class="seccion" id="seccion7">
+            <h2 class="titulo-principal">Cada día a tu lado es un regalo</h2>
+            <div class="foto-contenedor">
+                <img src="https://i.imgur.com/LfzhbS2.jpeg" alt="Momentos juntos" class="foto-personalizada foto-animada">
+                <p class="foto-texto">Mis momentos favoritos son los que compartimos</p>
+            </div>
+            <p class="texto-largo">
+                Me encanta cómo nos entendemos sin necesidad de palabras, cómo ríen juntos de las cosas más tontas y cómo siempre estamos ahí el uno para el otro. Eres mi refugio, mi felicidad y mi razón de sonreír todos los días.
+            </p>
+            <div class="corazon-continuar" onclick="mostrarSeccion(8)">
+                <div class="corazon-icono"></div>
+                <span class="texto-continuar">Siguiente</span>
             </div>
         </div>
-    </div>
 
-    <script>
-        let seccionActual = 1;
+        <!-- Sección 8 (NUEVA) -->
+        <div class="seccion" id="seccion8">
+            <h2 class="titulo-principal">¡Ahhhh por cierto me olvidaba...</h2>
+            <div class="foto-contenedor">
+                <img src="https://i.imgur.com/LfzhbS2.jpeg" alt="Sorpresa" class="foto-personalizada foto-animada">
+                <p class="foto-texto">Hay algo que quiero preguntarte...</p>
+            </div>
+            <p class="texto-largo">
+                He estado pensando en ello desde hace tiempo y no quería dejarlo pasar. Sabes que para mí cada momento contigo es especial, pero hay una fecha en particular que me gustaría compartir contigo de una manera muy especial.
+            </p>
+            <div class="corazon-continuar" onclick="mostrarSeccion(9)">
+                <div class="corazon-icono"></div>
+                <span class="texto-continuar">Siguiente</span>
+            </div>
+        </div>
 
-        function mostrarSeccion(num) {
-            if (num > seccionActual) {
-                document.querySelectorAll('.seccion, .seccion-1').forEach(s => {
-                    s.classList.remove('mostrar');
-                    s.style.display = 'none';
-                });
-                const seccionDestino = document.getElementById(`seccion${num}`);
-                seccionDestino.style.display = 'block';
-                seccionDestino.classList.add('mostrar');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+        <!-- Sección 9 (NUEVA) -->
+        <div class="seccion" id="seccion9">
+            <h2 class="titulo-principal">¿Quieres ser mi San Valentín?</h2>
+            <div class="foto-contenedor">
+                <img src="https://i.imgur.com/LfzhbS2.jpeg" alt="San Valentín" class="foto-personalizada foto
