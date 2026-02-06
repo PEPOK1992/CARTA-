@@ -102,7 +102,7 @@
             max-width: 80%;
             height: auto;
             border-radius: 15px;
-            box-shadow: 0 0 15px rgba(214, 51, 132, 0.2);
+            box-shadow: 0 0 20px rgba(214, 51, 132, 0.2);
         }
 
         .foto-texto {
@@ -264,6 +264,25 @@
         .foto-seccion-1 {
             max-width: 60%;
         }
+
+        /* Estilos para la última sección */
+        .pantalla-final .foto-contenedor {
+            display: flex;
+            flex-direction: row; /* Alinear las imágenes horizontalmente */
+            justify-content: center; /* Centrar las imágenes */
+            align-items: center;
+            flex-wrap: wrap; /* Permitir que las imágenes se envuelvan a la siguiente línea */
+        }
+
+        .pantalla-final .foto-personalizada {
+            max-width: 30%; /* Imágenes más pequeñas */
+            margin: 10px; /* Espacio entre las imágenes */
+        }
+
+        .pantalla-final .texto-final {
+            font-size: 2rem; /* Ajustar el tamaño del texto */
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
@@ -345,9 +364,9 @@
         <div class="pantalla-final" id="pantallaFinal">
             <div class="texto-final">TE AMO, AMOR DE MI VIDA ❤️</div>
             <div class="foto-contenedor" style="z-index: 10;">
-                <img src="https://i.imgur.com/LfzhbS2.jpeg" alt="Nuestro amor" class="foto-personalizada foto-animada" style="max-width: 70%;">
-                <img src="https://i.imgur.com/LfzhbS2.jpeg" alt="Nuestro amor" class="foto-personalizada foto-animada" style="max-width: 70%;">
-                <img src="https://i.imgur.com/LfzhbS2.jpeg" alt="Nuestro amor" class="foto-personalizada foto-animada" style="max-width: 70%;">
+                <img src="https://i.imgur.com/LfzhbS2.jpeg" alt="Nuestro amor" class="foto-personalizada foto-animada">
+                <img src="https://i.imgur.com/LfzhbS2.jpeg" alt="Nuestro amor" class="foto-personalizada foto-animada">
+                <img src="https://i.imgur.com/LfzhbS2.jpeg" alt="Nuestro amor" class="foto-personalizada foto-animada">
             </div>
         </div>
     </div>
