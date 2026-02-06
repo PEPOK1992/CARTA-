@@ -285,19 +285,19 @@
         /* Estilos para la última sección */
         .pantalla-final .foto-contenedor {
             display: flex;
-            flex-direction: row;
-            justify-content: center;
+            flex-direction: row; /* Alinear las imágenes horizontalmente */
+            justify-content: center; /* Centrar las imágenes */
             align-items: center;
-            flex-wrap: wrap;
+            flex-wrap: wrap; /* Permitir que las imágenes se envuelvan a la siguiente línea */
         }
 
         .pantalla-final .foto-personalizada {
-            max-width: 30%;
-            margin: 10px;
+            max-width: 30%; /* Imágenes más pequeñas */
+            margin: 10px; /* Espacio entre las imágenes */
         }
 
         .pantalla-final .texto-final {
-            font-size: 2rem;
+            font-size: 2rem; /* Ajustar el tamaño del texto */
             margin-bottom: 20px;
         }
     </style>
@@ -322,8 +322,6 @@
             </div>
             <p class="texto-largo">
                 Desde que te conocí, cada día es una aventura. Gracias por llegar a mi vida.
-                <br><br>
-                Aquí puedes agregar más texto si quieres.
             </p>
             <div class="corazon-continuar" onclick="mostrarSeccion(3)">
                 <div class="corazon-icono"></div>
@@ -339,8 +337,6 @@
             </div>
             <p class="texto-largo">
                 Agradezco cada cosa que haces por mí, cada detalle, cada palabra. Cambiaste mi mundo por completo.
-                <br><br>
-                Aquí puedes agregar más texto si quieres.
             </p>
             <div class="corazon-continuar" onclick="mostrarSeccion(4)">
                 <div class="corazon-icono"></div>
@@ -352,8 +348,6 @@
         <div class="seccion" id="seccion4">
             <p class="texto-largo">
                 Perdón por los malos ratos, por las veces que no supe cómo actuar, por los errores que cometí.
-                <br><br>
-                Aquí puedes agregar más texto si quieres.
             </p>
             <div class="corazon-continuar" onclick="mostrarSeccion(5)">
                 <div class="corazon-icono"></div>
@@ -365,8 +359,6 @@
         <div class="seccion" id="seccion5">
             <p class="texto-largo">
                 Prometo que, a pesar de la distancia, siempre estarás en mi mente y en mi corazón. Te esperaré con el mismo amor, el mismo sentimiento, y cuando te vuelva a ver, te miraré con los mismos ojos de cuando me enamoré.
-                <br><br>
-                Aquí puedes agregar más texto si quieres.
             </p>
             <div class="corazon-continuar" onclick="mostrarSeccion(6)">
                 <div class="corazon-icono"></div>
@@ -378,8 +370,6 @@
         <div class="seccion" id="seccion6">
             <p class="texto-largo">
                 Prometemos no pelear, y si pasa, nos arreglaremos rápido. Prometemos dormir siempre en llamada, que si algo nos molesta, siempre lo hablaremos. Prometemos no dejarnos de amar.
-                 <br><br>
-                Aquí puedes agregar más texto si quieres.
             </p>
             <div class="corazon-continuar" onclick="mostrarPantallaFinal()">
                 <div class="corazon-icono"></div>
@@ -409,4 +399,5 @@
                 });
                 const seccionDestino = document.getElementById(`seccion${num}`);
                 seccionDestino.style.display = 'block';
-                seccionDestino.classList.add('mostrar
+                seccionDestino.classList.add('mostrar');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
