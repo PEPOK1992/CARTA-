@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carta para mi amor</title>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
@@ -22,24 +23,64 @@
             font-family: 'Roboto', sans-serif;
         }
 
-        /* SecciÛn 1 */
-        .seccion-1 {
+        /* Estilos generales de secciones */
+        .seccion {
+            display: none;
+            background-color: #fff;
+            width: 100%;
+            max-width: 600px;
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(221, 160, 221, 0.3);
             text-align: center;
-            padding: 30px;
+        }
+
+        .seccion-1 {
+            display: block;
+            text-align: center;
             width: 100%;
         }
 
+        .mostrar {
+            display: block !important;
+        }
+
+        /* T√≠tulos y textos */
         .titulo-principal {
             color: #d63384;
-            font-size: 3rem;
+            font-size: 2.5rem;
             line-height: 1.4;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             animation: pulse 2s infinite;
             font-family: 'Dancing Script', cursive;
             font-weight: 700;
         }
 
-        /* Contenedor de fotos */
+        .frase {
+            color: #333;
+            font-size: 1.3rem;
+            line-height: 1.8;
+            margin: 20px 0;
+            font-family: 'Dancing Script', cursive;
+        }
+
+        .texto-largo {
+            color: #333;
+            font-size: 1rem;
+            line-height: 1.8;
+            text-align: justify;
+            margin: 20px 0;
+        }
+
+        .pregunta {
+            color: #d63384;
+            font-size: 1.5rem;
+            margin: 30px 0;
+            font-family: 'Dancing Script', cursive;
+            font-weight: bold;
+        }
+
+        /* Fotos */
         .foto-contenedor {
             margin: 20px 0;
             text-align: center;
@@ -52,77 +93,40 @@
             box-shadow: 0 0 15px rgba(214, 51, 132, 0.2);
         }
 
-        /* CorazÛn clicable */
+        .foto-texto {
+            font-family: 'Dancing Script', cursive;
+            color: #d63384;
+            margin-top: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* Corazones cl√≠cables */
         .corazon-continuar {
             display: flex;
             flex-direction: column;
             align-items: center;
             cursor: pointer;
-            transition: all 0.3s ease;
-            color: #dc3545;
             margin-top: 20px;
+            transition: transform 0.3s ease;
         }
 
         .corazon-icono {
-            width: 60px;
-            height: 60px;
-            display: block;
-            animation: latir 0.8s infinite alternate;
-            /* CorazÛn hecho con CSS en lugar de imagen */
+            width: 50px;
+            height: 50px;
             background-color: #dc3545;
-            clip-path: path('M30,0 C45,0 60,15 60,30 C60,45 30,60 30,60 C30,60 0,45 0,30 C0,15 15,0 30,0 Z');
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            animation: latir 0.8s infinite alternate;
         }
 
         .texto-continuar {
+            font-family: 'Dancing Script', cursive;
+            color: #dc3545;
             font-size: 1.2rem;
             margin-top: 10px;
-            font-family: 'Dancing Script', cursive;
-            font-weight: 700;
         }
 
         .corazon-continuar:hover {
             transform: scale(1.1);
-        }
-
-        /* Secciones generales */
-        .seccion {
-            display: none;
-            background-color: #fff;
-            width: 100%;
-            max-width: 600px;
-            padding: 40px 30px;
-            border-radius: 15px;
-            box-shadow: 0 0 20px rgba(221, 160, 221, 0.3);
-            text-align: center;
-        }
-
-        .seccion.mostrar {
-            display: block;
-            animation: aparecer 0.8s ease forwards;
-        }
-
-        .frase {
-            color: #333;
-            font-size: 1.5rem;
-            line-height: 1.8;
-            margin: 20px 0;
-            font-family: 'Dancing Script', cursive;
-        }
-
-        .texto-largo {
-            color: #333;
-            font-size: 1.2rem;
-            line-height: 1.8;
-            margin: 20px 0;
-            text-align: justify;
-        }
-
-        .pregunta {
-            color: #d63384;
-            font-size: 1.8rem;
-            margin: 30px 0;
-            font-weight: bold;
-            font-family: 'Dancing Script', cursive;
         }
 
         /* Botones */
@@ -135,12 +139,11 @@
         }
 
         .btn {
-            padding: 15px 30px;
+            padding: 12px 25px;
             border-radius: 25px;
             border: none;
-            font-size: 1.2rem;
+            font-size: 1rem;
             cursor: pointer;
-            transition: all 0.3s ease;
             font-family: 'Dancing Script', cursive;
             font-weight: 700;
         }
@@ -174,30 +177,23 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            text-align: center;
             overflow: hidden;
-        }
-
-        .pantalla-final.mostrar {
-            display: flex;
-            animation: zoom 1s ease forwards;
+            z-index: 100;
         }
 
         .texto-final {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
             font-family: 'Dancing Script', cursive;
             font-weight: 700;
-            z-index: 10;
         }
 
-        /* Corazones flotantes hechos con CSS */
         .corazon-flotante {
             position: absolute;
-            width: 25px;
-            height: 25px;
+            width: 20px;
+            height: 20px;
             background-color: white;
-            clip-path: path('M12.5,0 C18.75,0 25,6.25 25,12.5 C25,18.75 12.5,25 12.5,25 C12.5,25 0,18.75 0,12.5 C0,6.25 6.25,0 12.5,0 Z');
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
             animation: flotar 3s ease-in-out infinite;
             z-index: 5;
         }
@@ -214,16 +210,6 @@
             100% { transform: scale(1.1); }
         }
 
-        @keyframes aparecer {
-            0% { opacity: 0; transform: translateY(20px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes zoom {
-            0% { opacity: 0; transform: scale(0.5); }
-            100% { opacity: 1; transform: scale(1); }
-        }
-
         @keyframes flotar {
             0% { transform: translateY(100vh) rotate(0deg); }
             100% { transform: translateY(-20px) rotate(360deg); }
@@ -232,42 +218,7 @@
         /* Responsivo */
         @media (max-width: 480px) {
             .titulo-principal {
-                font-size: 2.2rem;
-            }
-
-            .corazon-icono {
-                width: 50px;
-                height: 50px;
-            }
-
-            .texto-continuar {
-                font-size: 1rem;
-            }
-
-            .frase {
-                font-size: 1.3rem;
-            }
-
-            .texto-largo {
-                font-size: 1rem;
-            }
-
-            .pregunta {
-                font-size: 1.5rem;
-            }
-
-            .btn {
-                padding: 12px 25px;
-                font-size: 1rem;
-            }
-
-            .texto-final {
-                font-size: 2.5rem;
-            }
-
-            .corazon-flotante {
-                width: 20px;
-                height: 20px;
+                font-size: 2rem;
             }
 
             .foto-personalizada {
@@ -277,14 +228,13 @@
     </style>
 </head>
 <body>
-    <!-- SECCI”N 1: TÕTULO PRINCIPAL -->
+    <!-- Secci√≥n 1 -->
     <div class="seccion-1 mostrar" id="seccion1">
         <h1 class="titulo-principal">TE AMO<br>AMOR DE MI VIDA</h1>
         
-        <!-- ESPACIO PARA FOTO 1 -->
         <div class="foto-contenedor">
-            <img src="AQUI_PONER_LINK_DE_TU_FOTO_1" alt="Foto especial para ti" class="foto-personalizada">
-            <p style="font-family: 'Dancing Script', cursive; color: #d63384; margin-top: 10px;">Nuestro primer momento juntos ??</p>
+            <img src="https://pepok1992.github.io/CARTA-/foto1.jpg" alt="Foto especial" class="foto-personalizada">
+            <p class="foto-texto">Nuestro primer momento juntos ‚ù§Ô∏è</p>
         </div>
 
         <div class="corazon-continuar" onclick="mostrarSeccion(2)">
@@ -293,16 +243,15 @@
         </div>
     </div>
 
-    <!-- SECCI”N 2: FRASE DE AGRADECIMIENTO -->
+    <!-- Secci√≥n 2 -->
     <div class="seccion" id="seccion2">
         <p class="frase">
-            "Gracias por existir en mi vida, por ser mi refugio cuando el mundo se pone complicado, por llenar mis dÌas de sonrisas y mi corazÛn de paz. Eres el mejor regalo que la vida me ha dado."
+            "Gracias por existir en mi vida, por ser mi refugio cuando el mundo se pone complicado, por llenar mis d√≠as de sonrisas y mi coraz√≥n de paz. Eres el mejor regalo que la vida me ha dado."
         </p>
         
-        <!-- ESPACIO PARA FOTO 2 -->
         <div class="foto-contenedor">
-            <img src="AQUI_PONER_LINK_DE_TU_FOTO_2" alt="Foto de nosotros" class="foto-personalizada">
-            <p style="font-family: 'Dancing Script', cursive; color: #d63384; margin-top: 10px;">Cuando sonreÌmos juntos ??</p>
+            <img src="https://pepok1992.github.io/CARTA-/foto2.jpg" alt="Foto de nosotros" class="foto-personalizada">
+            <p class="foto-texto">Cuando sonre√≠mos juntos üòä</p>
         </div>
 
         <div class="corazon-continuar" onclick="mostrarSeccion(3)">
@@ -311,81 +260,61 @@
         </div>
     </div>
 
-    <!-- SECCI”N 3: TEXTO LARGO Y PREGUNTA -->
+    <!-- Secci√≥n 3 -->
     <div class="seccion" id="seccion3">
         <p class="texto-largo">
-            Mi amor, desde que llegaste a mi lado, todo tiene sentido. Me encanta cÛmo me miras cuando piensas que no te veo, cÛmo te ries a carcajadas con mis chistes tontos, cÛmo te preocupas por mÌ sin necesidad de decir nada. Eres la persona que me hace querer ser mejor cada dÌa, que me acepta tal como soy y que me hace sentir completo. Cada momento a tu lado es un sueÒo hecho realidad, y no puedo imaginar un futuro donde no estÈs conmigo.
+            Mi amor, desde que llegaste a mi lado, todo tiene sentido. Me encanta c√≥mo me miras cuando piensas que no te veo, c√≥mo te ries a carcajadas con mis chistes tontos, c√≥mo te preocupas por m√≠ sin necesidad de decir nada. Eres la persona que me hace querer ser mejor cada d√≠a, que me acepta tal como soy y que me hace sentir completo. Cada momento a tu lado es un sue√±o hecho realidad.
         </p>
         
-        <!-- ESPACIO PARA FOTO 3 -->
         <div class="foto-contenedor">
-            <img src="AQUI_PONER_LINK_DE_TU_FOTO_3" alt="Nuestra foto favorita" class="foto-personalizada">
-            <p style="font-family: 'Dancing Script', cursive; color: #d63384; margin-top: 10px;">Mi lugar favorito est· a tu lado ??</p>
+            <img src="https://pepok1992.github.io/CARTA-/foto3.jpg" alt="Foto favorita" class="foto-personalizada">
+            <p class="foto-texto">Mi lugar favorito est√° a tu lado ü•∞</p>
         </div>
 
-        <p class="pregunta">øQuieres ser mi ValentÌn?</p>
+        <p class="pregunta">¬øQuieres ser mi Valent√≠n?</p>
         <div class="opciones">
-            <button class="btn btn-si" onclick="mostrarPantallaFinal()">SÕ, CLARO QUE SÕ ??</button>
+            <button class="btn btn-si" onclick="mostrarPantallaFinal()">S√ç, CLARO QUE S√ç ‚ù§Ô∏è</button>
             <button class="btn btn-no" onclick="moverBotonNo(event)">No...</button>
         </div>
     </div>
 
-    <!-- PANTALLA FINAL -->
+    <!-- Pantalla final -->
     <div class="pantalla-final" id="pantallaFinal">
         <div class="texto-final">TE AMOOOOOOO!</div>
         
-        <!-- ESPACIO PARA FOTO 4 -->
-        <div class="foto-contenedor" style="z-index: 10; margin: 20px 0;">
-            <img src="AQUI_PONER_LINK_DE_TU_FOTO_4" alt="Nuestro amor" class="foto-personalizada" style="max-width: 70%;">
+        <div class="foto-contenedor" style="z-index: 10;">
+            <img src="https://pepok1992.github.io/CARTA-/foto4.jpg" alt="Nuestro amor" class="foto-personalizada" style="max-width: 70%;">
         </div>
     </div>
 
     <script>
-        function mostrarSeccion(numSeccion) {
-            document.querySelectorAll('.seccion, .seccion-1').forEach(seccion => {
-                seccion.classList.remove('mostrar');
-            });
-            document.getElementById(`seccion${numSeccion}`).classList.add('mostrar');
+        function mostrarSeccion(num) {
+            document.querySelectorAll('.seccion, .seccion-1').forEach(s => s.classList.remove('mostrar'));
+            document.getElementById(`seccion${num}`).classList.add('mostrar');
         }
 
         function moverBotonNo(event) {
-            const boton = event.target;
-            const maxX = window.innerWidth - boton.offsetWidth - 20;
-            const maxY = window.innerHeight - boton.offsetHeight - 20;
-            
-            const randomX = Math.floor(Math.random() * maxX);
-            const randomY = Math.floor(Math.random() * maxY);
-            
-            boton.style.position = 'absolute';
-            boton.style.left = `${randomX}px`;
-            boton.style.top = `${randomY}px`;
-            boton.innerText = '°No puedes escapar! ??';
-        }
-
-        function crearCorazonesFlotantes() {
-            const pantalla = document.getElementById('pantallaFinal');
-            const cantidad = 30;
-
-            for(let i=0; i<cantidad; i++) {
-                const corazon = document.createElement('div');
-                corazon.classList.add('corazon-flotante');
-                
-                corazon.style.left = `${Math.random() * 100}vw`;
-                corazon.style.animationDelay = `${Math.random() * 5}s`;
-                corazon.style.width = `${15 + Math.random() * 15}px`;
-                corazon.style.height = corazon.style.width;
-                
-                pantalla.appendChild(corazon);
-            }
+            const btn = event.target;
+            const maxX = window.innerWidth - btn.offsetWidth - 20;
+            const maxY = window.innerHeight - btn.offsetHeight - 20;
+            btn.style.left = `${Math.random() * maxX}px`;
+            btn.style.top = `${Math.random() * maxY}px`;
+            btn.innerText = '¬°No puedes escapar! üòú';
         }
 
         function mostrarPantallaFinal() {
-            document.querySelectorAll('.seccion, .seccion-1').forEach(seccion => {
-                seccion.classList.remove('mostrar');
-            });
-            const pantallaFinal = document.getElementById('pantallaFinal');
-            pantallaFinal.classList.add('mostrar');
-            crearCorazonesFlotantes();
+            document.querySelectorAll('.seccion, .seccion-1').forEach(s => s.classList.remove('mostrar'));
+            const final = document.getElementById('pantallaFinal');
+            final.style.display = 'flex';
+            
+            // Crear corazones flotantes
+            for(let i=0; i<30; i++) {
+                const corazon = document.createElement('div');
+                corazon.classList.add('corazon-flotante');
+                corazon.style.left = `${Math.random() * 100}vw`;
+                corazon.style.animationDelay = `${Math.random() * 5}s`;
+                final.appendChild(corazon);
+            }
         }
     </script>
 </body>
