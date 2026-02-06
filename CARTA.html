@@ -24,6 +24,10 @@
             font-family: 'Roboto', sans-serif;
             overflow-x: hidden;
             overflow-y: auto;
+            background-image: url('https://i.imgur.com/ysqH09h.png'); /* Fondo con flores */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
         }
 
         /* Contenedor principal */
@@ -36,7 +40,7 @@
         /* Estilos de secciones */
         .seccion {
             display: none;
-            background-color: #fff;
+            background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semi-transparente */
             width: 100%;
             padding: 40px 30px;
             border-radius: 15px;
@@ -65,6 +69,7 @@
             animation: pulse 2s infinite;
             font-family: 'Dancing Script', cursive;
             font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .frase {
@@ -73,6 +78,7 @@
             line-height: 1.8;
             margin: 20px 0;
             font-family: 'Dancing Script', cursive;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
         }
 
         .texto-largo {
@@ -82,6 +88,7 @@
             text-align: justify;
             margin: 20px 0;
             font-family: 'Dancing Script', cursive;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
         }
 
         .pregunta {
@@ -90,6 +97,7 @@
             margin: 30px 0;
             font-family: 'Dancing Script', cursive;
             font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         /* Estilos de fotos */
@@ -102,7 +110,12 @@
             max-width: 80%;
             height: auto;
             border-radius: 15px;
-            box-shadow: 0 0 20px rgba(214, 51, 132, 0.2);
+            box-shadow: 0 0 15px rgba(214, 51, 132, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .foto-personalizada:hover {
+            transform: scale(1.05);
         }
 
         .foto-texto {
@@ -110,6 +123,7 @@
             color: #d63384;
             margin-top: 10px;
             font-size: 1.2rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
         }
 
         /* Estilos de botón continuar (corazón) */
@@ -135,6 +149,7 @@
             color: #d63384;
             font-size: 1.2rem;
             margin-top: 10px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
         }
 
         .corazon-continuar:hover {
@@ -158,6 +173,7 @@
             cursor: pointer;
             font-family: 'Dancing Script', cursive;
             font-weight: 700;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
         }
 
         .btn-si {
@@ -184,7 +200,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: #d63384;
+            background-color: rgba(214, 51, 132, 0.9); /* Fondo rosa semi-transparente */
             color: white;
             flex-direction: column;
             justify-content: center;
@@ -198,6 +214,7 @@
             margin-bottom: 30px;
             font-family: 'Dancing Script', cursive;
             font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
         }
 
         .corazon-flotante {
@@ -268,19 +285,19 @@
         /* Estilos para la última sección */
         .pantalla-final .foto-contenedor {
             display: flex;
-            flex-direction: row; /* Alinear las imágenes horizontalmente */
-            justify-content: center; /* Centrar las imágenes */
+            flex-direction: row;
+            justify-content: center;
             align-items: center;
-            flex-wrap: wrap; /* Permitir que las imágenes se envuelvan a la siguiente línea */
+            flex-wrap: wrap;
         }
 
         .pantalla-final .foto-personalizada {
-            max-width: 30%; /* Imágenes más pequeñas */
-            margin: 10px; /* Espacio entre las imágenes */
+            max-width: 30%;
+            margin: 10px;
         }
 
         .pantalla-final .texto-final {
-            font-size: 2rem; /* Ajustar el tamaño del texto */
+            font-size: 2rem;
             margin-bottom: 20px;
         }
     </style>
@@ -305,6 +322,8 @@
             </div>
             <p class="texto-largo">
                 Desde que te conocí, cada día es una aventura. Gracias por llegar a mi vida.
+                <br><br>
+                Aquí puedes agregar más texto si quieres.
             </p>
             <div class="corazon-continuar" onclick="mostrarSeccion(3)">
                 <div class="corazon-icono"></div>
@@ -320,6 +339,8 @@
             </div>
             <p class="texto-largo">
                 Agradezco cada cosa que haces por mí, cada detalle, cada palabra. Cambiaste mi mundo por completo.
+                <br><br>
+                Aquí puedes agregar más texto si quieres.
             </p>
             <div class="corazon-continuar" onclick="mostrarSeccion(4)">
                 <div class="corazon-icono"></div>
@@ -331,6 +352,8 @@
         <div class="seccion" id="seccion4">
             <p class="texto-largo">
                 Perdón por los malos ratos, por las veces que no supe cómo actuar, por los errores que cometí.
+                <br><br>
+                Aquí puedes agregar más texto si quieres.
             </p>
             <div class="corazon-continuar" onclick="mostrarSeccion(5)">
                 <div class="corazon-icono"></div>
@@ -342,6 +365,8 @@
         <div class="seccion" id="seccion5">
             <p class="texto-largo">
                 Prometo que, a pesar de la distancia, siempre estarás en mi mente y en mi corazón. Te esperaré con el mismo amor, el mismo sentimiento, y cuando te vuelva a ver, te miraré con los mismos ojos de cuando me enamoré.
+                <br><br>
+                Aquí puedes agregar más texto si quieres.
             </p>
             <div class="corazon-continuar" onclick="mostrarSeccion(6)">
                 <div class="corazon-icono"></div>
@@ -353,6 +378,8 @@
         <div class="seccion" id="seccion6">
             <p class="texto-largo">
                 Prometemos no pelear, y si pasa, nos arreglaremos rápido. Prometemos dormir siempre en llamada, que si algo nos molesta, siempre lo hablaremos. Prometemos no dejarnos de amar.
+                 <br><br>
+                Aquí puedes agregar más texto si quieres.
             </p>
             <div class="corazon-continuar" onclick="mostrarPantallaFinal()">
                 <div class="corazon-icono"></div>
@@ -382,30 +409,4 @@
                 });
                 const seccionDestino = document.getElementById(`seccion${num}`);
                 seccionDestino.style.display = 'block';
-                seccionDestino.classList.add('mostrar');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-                seccionActual = num;
-            }
-        }
-
-        function moverBotonNo(event) {
-            const btn = event.target;
-            const maxX = window.innerWidth - btn.offsetWidth - 20;
-            const maxY = window.innerHeight - btn.offsetHeight - 20;
-            btn.style.left = `${Math.random() * maxX}px`;
-            btn.style.top = `${Math.random() * maxY}px`;
-            btn.innerText = '¡No puedes escapar! 😜';
-        }
-
-        function mostrarPantallaFinal() {
-            document.querySelectorAll('.seccion, .seccion-1').forEach(s => {
-                s.classList.remove('mostrar');
-                s.style.display = 'none';
-            });
-            const final = document.getElementById('pantallaFinal');
-            final.style.display = 'flex';
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-    </script>
-</body>
-</html>
+                seccionDestino.classList.add('mostrar
