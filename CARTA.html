@@ -19,9 +19,18 @@
             min-height: 100vh;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start; /* Ajuste para evitar desbordamiento */
             padding: 20px;
             font-family: 'Roboto', sans-serif;
+            overflow-x: hidden; /* Evita scroll horizontal */
+            overflow-y: auto; /* Permite scroll vertical solo si es necesario */
+        }
+
+        /* Contenedor principal para asegurar que solo una sección se muestre */
+        .contenedor-principal {
+            width: 100%;
+            max-width: 600px;
+            position: relative;
         }
 
         /* Estilos de secciones */
@@ -29,11 +38,12 @@
             display: none;
             background-color: #fff;
             width: 100%;
-            max-width: 600px;
             padding: 40px 30px;
             border-radius: 15px;
             box-shadow: 0 0 20px rgba(221, 160, 221, 0.3);
             text-align: center;
+            position: relative;
+            margin: 0 auto;
         }
 
         .seccion-1 {
@@ -102,27 +112,27 @@
             font-size: 1.2rem;
         }
 
-        /* Estilos de corazones clicables */
+        /* Estilos de botón continuar (estrella) */
         .corazon-continuar {
             display: flex;
             flex-direction: column;
             align-items: center;
             cursor: pointer;
-            margin-top: 20px;
+            margin-top: 30px;
             transition: transform 0.3s ease;
         }
 
         .corazon-icono {
             width: 50px;
             height: 50px;
-            background-color: #dc3545;
-            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            background-color: #d63384;
+            clip-path: polygon(50% 0%, 60% 40%, 100% 40%, 67% 60%, 75% 100%, 50% 75%, 25% 100%, 33% 60%, 0% 40%, 40% 40%); /* Forma de estrella */
             animation: latir 0.8s infinite alternate;
         }
 
         .texto-continuar {
             font-family: 'Dancing Script', cursive;
-            color: #dc3545;
+            color: #d63384;
             font-size: 1.2rem;
             margin-top: 10px;
         }
@@ -137,7 +147,7 @@
             gap: 30px;
             justify-content: center;
             flex-wrap: wrap;
-            margin: 20px 0;
+            margin: 20px 0 30px;
         }
 
         .btn {
@@ -192,8 +202,8 @@
 
         .corazon-flotante {
             position: absolute;
-            width: 25px; /* Estrellas más grandes */
-            height: 25px; /* Estrellas más grandes */
+            width: 25px;
+            height: 25px;
             background-color: white;
             clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
             animation: flotar 3s ease-in-out infinite;
@@ -218,18 +228,30 @@
         }
 
         @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
 
         /* Media queries para responsividad */
         @media (max-width: 480px) {
-            .titulo-principal {
-                font-size: 2rem;
+            body {
+                padding: 10px;
+                align-items: center;
+                min-height: 100vh;
             }
 
-            .foto-personalizada {
-                max-width: 90%;
+            .titulo-principal {
+                font-size: 2rem;
+                margin-bottom: 20px;
+            }
+
+            .seccion {
+                padding: 25px 20px;
+                margin: 0 auto;
+            }
+
+            .frase {
+                font-size: 1.2rem;
             }
         }
 
@@ -240,78 +262,89 @@
 
         /* Estilo para la imagen de la sección 1 */
         .foto-seccion-1 {
-            max-width: 60%; /* Imagen más pequeña en la sección 1 */
+            max-width: 60%;
         }
     </style>
 </head>
 <body>
-    <!-- Sección 1 -->
-    <div class="seccion-1 mostrar" id="seccion1">
-        <h1 class="titulo-principal">TE AMO<br>AMOR DE MI VIDA</h1>
-        
-        <div class="foto-contenedor">
-            <img src="https://i.imgur.com/LfzhbS2.jpeg" alt="Foto especial" class="foto-personalizada foto-seccion-1 foto-animada">
-            <p class="foto-texto">Nuestro primer momento juntos ❤️</p>
+    <div class="contenedor-principal">
+        <!-- Sección 1 -->
+        <div class="seccion-1 mostrar" id="seccion1">
+            <h1 class="titulo-principal">TE AMO<br>AMOR DE MI VIDA</h1>
+            
+            <div class="foto-contenedor">
+                <img src="https://i.imgur.com/LfzhbS2.jpeg" alt="Foto especial" class="foto-personalizada foto-seccion-1 foto-animada">
+                <p class="foto-texto">Nuestro primer momento juntos ❤️</p>
+            </div>
+
+            <div class="corazon-continuar" onclick="mostrarSeccion(2)">
+                <div class="corazon-icono"></div>
+                <span class="texto-continuar">Continuar</span>
+            </div>
         </div>
 
-        <div class="corazon-continuar" onclick="mostrarSeccion(2)">
-            <div class="corazon-icono"></div>
-            <span class="texto-continuar">Continuar</span>
-        </div>
-    </div>
+        <!-- Sección 2 -->
+        <div class="seccion" id="seccion2">
+            <p class="frase">
+                "Gracias por existir en mi vida, por ser mi refugio cuando el mundo se pone complicado, por llenar mis días de sonrisas y mi corazón de paz. Eres el mejor regalo que la vida me ha dado."
+            </p>
+            
+            <div class="foto-contenedor">
+                <img src="https://i.imgur.com/jkjV2qP.jpeg" alt="Foto de nosotros" class="foto-personalizada foto-animada">
+                <p class="foto-texto">Cuando sonreímos juntos 😊</p>
+            </div>
 
-    <!-- Sección 2 -->
-    <div class="seccion" id="seccion2">
-        <p class="frase">
-            "Gracias por existir en mi vida, por ser mi refugio cuando el mundo se pone complicado, por llenar mis días de sonrisas y mi corazón de paz. Eres el mejor regalo que la vida me ha dado."
-        </p>
-        
-        <div class="foto-contenedor">
-            <img src="https://i.imgur.com/jkjV2qP.jpeg" alt="Foto de nosotros" class="foto-personalizada foto-animada">
-            <p class="foto-texto">Cuando sonreímos juntos 😊</p>
-        </div>
-
-        <div class="corazon-continuar" onclick="mostrarSeccion(3)">
-            <div class="corazon-icono"></div>
-            <span class="texto-continuar">Continuar</span>
-        </div>
-    </div>
-
-    <!-- Sección 3 -->
-    <div class="seccion" id="seccion3">
-        <p class="texto-largo">
-            Mi amor, desde que llegaste a mi lado, todo tiene sentido. Me encanta cómo me miras cuando piensas que no te veo, cómo te ries a carcajadas con mis chistes tontos, cómo te preocupas por mí sin necesidad de decir nada. Eres la persona que me hace querer ser mejor cada día, que me acepta tal como soy y que me hace sentir completo. Cada momento a tu lado es un sueño hecho realidad.
-        </p>
-        
-        <div class="foto-contenedor">
-            <img src="https://i.imgur.com/LfzhbS2.jpeg" alt="Foto favorita" class="foto-personalizada foto-animada">
-            <p class="foto-texto">Mi lugar favorito está a tu lado 🥰</p>
+            <div class="corazon-continuar" onclick="mostrarSeccion(3)">
+                <div class="corazon-icono"></div>
+                <span class="texto-continuar">Continuar</span>
+            </div>
         </div>
 
-        <p class="pregunta">¿Quieres ser mi Valentín?</p>
-        <div class="opciones">
-            <button class="btn btn-si" onclick="mostrarPantallaFinal()">SÍ, CLARO QUE SÍ ❤️</button>
-            <button class="btn btn-no" onclick="moverBotonNo(event)">No...</button>
-        </div>
-    </div>
+        <!-- Sección 3 -->
+        <div class="seccion" id="seccion3">
+            <p class="texto-largo">
+                Mi amor, desde que llegaste a mi lado, todo tiene sentido. Me encanta cómo me miras cuando piensas que no te veo, cómo te ries a carcajadas con mis chistes tontos, cómo te preocupas por mí sin necesidad de decir nada. Eres la persona que me hace querer ser mejor cada día, que me acepta tal como soy y que me hace sentir completo. Cada momento a tu lado es un sueño hecho realidad.
+            </p>
+            
+            <div class="foto-contenedor">
+                <img src="https://i.imgur.com/LfzhbS2.jpeg" alt="Foto favorita" class="foto-personalizada foto-animada">
+                <p class="foto-texto">Mi lugar favorito está a tu lado 🥰</p>
+            </div>
 
-    <!-- Pantalla final -->
-    <div class="pantalla-final" id="pantallaFinal">
-        <div class="texto-final">TE AMOOOOOOO!</div>
-        
-        <div class="foto-contenedor" style="z-index: 10;">
-            <img src="https://i.imgur.com/LfzhbS2.jpeg" alt="Nuestro amor" class="foto-personalizada foto-animada" style="max-width: 70%;">
+            <p class="pregunta">¿Quieres ser mi Valentín?</p>
+            <div class="opciones">
+                <button class="btn btn-si" onclick="mostrarPantallaFinal()">SÍ, CLARO QUE SÍ ❤️</button>
+                <button class="btn btn-no" onclick="moverBotonNo(event)">No...</button>
+            </div>
+        </div>
+
+        <!-- Pantalla final -->
+        <div class="pantalla-final" id="pantallaFinal">
+            <div class="texto-final">TE AMOOOOOOO!</div>
+            
+            <div class="foto-contenedor" style="z-index: 10;">
+                <img src="https://i.imgur.com/LfzhbS2.jpeg" alt="Nuestro amor" class="foto-personalizada foto-animada" style="max-width: 70%;">
+            </div>
         </div>
     </div>
 
     <script>
-        let seccionActual = 1; // Variable para rastrear la sección actual
+        let seccionActual = 1;
 
         function mostrarSeccion(num) {
-            if (num > seccionActual) { // Solo permite avanzar
-                document.querySelectorAll('.seccion, .seccion-1').forEach(s => s.classList.remove('mostrar'));
-                document.getElementById(`seccion${num}`).classList.add('mostrar');
-                seccionActual = num; // Actualiza la sección actual
+            if (num > seccionActual) {
+                // Oculta TODAS las secciones primero
+                document.querySelectorAll('.seccion, .seccion-1').forEach(s => {
+                    s.classList.remove('mostrar');
+                    s.style.display = 'none';
+                });
+                // Muestra solo la sección seleccionada
+                const seccionDestino = document.getElementById(`seccion${num}`);
+                seccionDestino.style.display = 'block';
+                seccionDestino.classList.add('mostrar');
+                // Desplaza la pantalla hacia arriba
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                seccionActual = num;
             }
         }
 
@@ -325,11 +358,13 @@
         }
 
         function mostrarPantallaFinal() {
-            document.querySelectorAll('.seccion, .seccion-1').forEach(s => s.classList.remove('mostrar'));
+            document.querySelectorAll('.seccion, .seccion-1').forEach(s => {
+                s.classList.remove('mostrar');
+                s.style.display = 'none';
+            });
             const final = document.getElementById('pantallaFinal');
             final.style.display = 'flex';
             
-            // Crear corazones flotantes
             for(let i=0; i<30; i++) {
                 const corazon = document.createElement('div');
                 corazon.classList.add('corazon-flotante');
