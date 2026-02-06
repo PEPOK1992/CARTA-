@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para mi amor</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8e8f2;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            transition: all 0.5s ease;
+        }
+
+        /* Sección 1 */
+        .seccion-1 {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .titulo-principal {
+            color: #d63384;
+            font-size: 2.5rem;
+            line-height: 1.4;
+            margin-bottom: 50px;
+            animation: pulse 2s infinite;
+        }
+
+        /* Corazón clicable */
+        .corazon-continuar {
+            font-size: 4rem;
+            color: #dc3545;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .corazon-continuar:hover {
+            transform: scale(1.2);
+            animation: latir 0.8s infinite alternate;
+        }
+
+        /* Secciones generales */
+        .seccion {
+            display: none;
+            background-color: #fff;
+            width: 100%;
+            max-width: 600px;
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(221, 160, 221, 0.3);
+            text-align: center;
+        }
+
+        .seccion.mostrar {
+            display: block;
+            animation: aparecer 0.8s ease forwards;
+        }
+
+        .frase {
+            color: #333;
+            font-size: 1.3rem;
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+
+        .texto-largo {
+            color: #333;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            text-align: justify;
+        }
+
+        .pregunta {
+            color: #d63384;
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            font-weight: bold;
+        }
+
+        /* Botones de opción */
+        .opciones {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border-radius: 25px;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-si {
+            background-color: #d63384;
+            color: white;
+        }
+
+        .btn-si:hover {
+            background-color: #b02a68;
+            transform: scale(1.05);
+        }
+
+        .btn-no {
+            background-color: #6c757d;
+            color: white;
+            position: relative;
+        }
+
+        /* Pantalla final */
+        .pantalla-final {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 100vh;
+            width: 100%;
+            background-color: #d63384;
+            color: white;
+        }
+
+        .pantalla-final.mostrar {
+            display: flex;
+            animation: zoom 1s ease forwards;
+        }
+
+        .texto-final {
+            font-size: 3rem;
+            margin-bottom: 30px;
+        }
+
+        .corazones-final {
+            font-size: 2rem;
+            animation: latir 0.5s infinite alternate;
+        }
+
+        /* Animaciones */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes latir {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+
+        @keyframes aparecer {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes zoom {
+            0% { opacity: 0; transform: scale(0.5); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        /* Responsivo */
+        @media (max-width: 480px) {
+            .titulo-principal {
+                font-size: 1.8rem;
+            }
+
+            .corazon-continuar {
+                font-size: 3rem;
+            }
+
+            .frase {
+                font-size: 1.1rem;
+            }
+
+            .texto-largo {
+                font-size: 1rem;
+            }
+
+            .pregunta {
+                font-size: 1.2rem;
+            }
+
+            .btn {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+
+            .texto-final {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sección 1: Título principal -->
+    <div class="seccion-1 mostrar" id="seccion1">
+        <h1 class="titulo-principal">TE AMO<br>AMOR DE MI VIDA</h1>
+        <div class="corazon-continuar" onclick="mostrarSeccion(2)">??</div>
+    </div>
+
+    <!-- Sección 2: Frase de agradecimiento -->
+    <div class="seccion" id="seccion2">
+        <p class="frase">
+            "Gracias por existir en mi vida, por ser mi refugio cuando el mundo se pone complicado, por llenar mis días de sonrisas y mi corazón de paz. Eres el mejor regalo que la vida me ha dado."
+        </p>
+        <div class="corazon-continuar" onclick="mostrarSeccion(3)">??</div>
+    </div>
+
+    <!-- Sección 3: Texto lindo y pregunta -->
+    <div class="seccion" id="seccion3">
+        <p class="texto-largo">
+            Mi amor, desde que llegaste a mi lado, todo tiene sentido. Me encanta cómo me miras cuando piensas que no te veo, cómo te ries a carcajadas con mis chistes tontos, cómo te preocupas por mí sin necesidad de decir nada. Eres la persona que me hace querer ser mejor cada día, que me acepta tal como soy y que me hace sentir completo. Cada momento a tu lado es un sueño hecho realidad, y no puedo imaginar un futuro donde no estés conmigo.
+        </p>
+        <p class="pregunta">¿Quieres ser mi Valentín?</p>
+        <div class="opciones">
+            <button class="btn btn-si" onclick="mostrarPantallaFinal()">SÍ, CLARO QUE SÍ ??</button>
+            <button class="btn btn-no" onclick="moverBotonNo(event)">No...</button>
+        </div>
+    </div>
+
+    <!-- Pantalla final -->
+    <div class="pantalla-final" id="pantallaFinal">
+        <div class="texto-final">TE AMOOOOOOO!</div>
+        <div class="corazones-final">??????????</div>
+    </div>
+
+    <script>
+        // Mostrar sección correspondiente
+        function mostrarSeccion(numSeccion) {
+            // Ocultar todas las secciones
+            document.querySelectorAll('.seccion, .seccion-1').forEach(seccion => {
+                seccion.classList.remove('mostrar');
+            });
+            // Mostrar la sección seleccionada
+            document.getElementById(`seccion${numSeccion}`).classList.add('mostrar');
+        }
+
+        // Mover botón NO cuando se intenta hacer clic
+        function moverBotonNo(event) {
+            const boton = event.target;
+            const maxX = window.innerWidth - boton.offsetWidth - 20;
+            const maxY = window.innerHeight - boton.offsetHeight - 20;
+            
+            const randomX = Math.floor(Math.random() * maxX);
+            const randomY = Math.floor(Math.random() * maxY);
+            
+            boton.style.position = 'absolute';
+            boton.style.left = `${randomX}px`;
+            boton.style.top = `${randomY}px`;
+            boton.innerText = '¡No puedes escapar! ??';
+        }
+
+        // Mostrar pantalla final
+        function mostrarPantallaFinal() {
+            document.querySelectorAll('.seccion, .seccion-1').forEach(seccion => {
+                seccion.classList.remove('mostrar');
+            });
+            document.getElementById('pantallaFinal').classList.add('mostrar');
+        }
+    </script>
+</body>
+</html>
