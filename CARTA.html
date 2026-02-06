@@ -22,7 +22,7 @@
             font-family: 'Roboto', sans-serif;
         }
 
-        /* Sección 1: Título principal */
+        /* Sección 1 */
         .seccion-1 {
             text-align: center;
             padding: 30px;
@@ -52,7 +52,7 @@
             box-shadow: 0 0 15px rgba(214, 51, 132, 0.2);
         }
 
-        /* Corazón clicable con texto */
+        /* Corazón clicable */
         .corazon-continuar {
             display: flex;
             flex-direction: column;
@@ -68,6 +68,9 @@
             height: 60px;
             display: block;
             animation: latir 0.8s infinite alternate;
+            /* Corazón hecho con CSS en lugar de imagen */
+            background-color: #dc3545;
+            clip-path: path('M30,0 C45,0 60,15 60,30 C60,45 30,60 30,60 C30,60 0,45 0,30 C0,15 15,0 30,0 Z');
         }
 
         .texto-continuar {
@@ -112,7 +115,6 @@
             line-height: 1.8;
             margin: 20px 0;
             text-align: justify;
-            font-family: 'Roboto', sans-serif;
         }
 
         .pregunta {
@@ -123,7 +125,7 @@
             font-family: 'Dancing Script', cursive;
         }
 
-        /* Botones de opción */
+        /* Botones */
         .opciones {
             display: flex;
             gap: 30px;
@@ -159,7 +161,7 @@
             position: relative;
         }
 
-        /* Pantalla final con corazones flotantes */
+        /* Pantalla final */
         .pantalla-final {
             display: none;
             position: fixed;
@@ -189,10 +191,13 @@
             z-index: 10;
         }
 
+        /* Corazones flotantes hechos con CSS */
         .corazon-flotante {
             position: absolute;
             width: 25px;
             height: 25px;
+            background-color: white;
+            clip-path: path('M12.5,0 C18.75,0 25,6.25 25,12.5 C25,18.75 12.5,25 12.5,25 C12.5,25 0,18.75 0,12.5 C0,6.25 6.25,0 12.5,0 Z');
             animation: flotar 3s ease-in-out infinite;
             z-index: 5;
         }
@@ -283,7 +288,7 @@
         </div>
 
         <div class="corazon-continuar" onclick="mostrarSeccion(2)">
-            <img src="https://cdn-icons-png.flaticon.com/512/1077/1077037.png" alt="Corazón" class="corazon-icono">
+            <div class="corazon-icono"></div>
             <span class="texto-continuar">Continuar</span>
         </div>
     </div>
@@ -301,7 +306,7 @@
         </div>
 
         <div class="corazon-continuar" onclick="mostrarSeccion(3)">
-            <img src="https://cdn-icons-png.flaticon.com/512/1077/1077037.png" alt="Corazón" class="corazon-icono">
+            <div class="corazon-icono"></div>
             <span class="texto-continuar">Continuar</span>
         </div>
     </div>
@@ -336,7 +341,6 @@
     </div>
 
     <script>
-        // Mostrar sección correspondiente
         function mostrarSeccion(numSeccion) {
             document.querySelectorAll('.seccion, .seccion-1').forEach(seccion => {
                 seccion.classList.remove('mostrar');
@@ -344,7 +348,6 @@
             document.getElementById(`seccion${numSeccion}`).classList.add('mostrar');
         }
 
-        // Mover botón NO
         function moverBotonNo(event) {
             const boton = event.target;
             const maxX = window.innerWidth - boton.offsetWidth - 20;
@@ -359,27 +362,23 @@
             boton.innerText = '¡No puedes escapar! ??';
         }
 
-        // Crear corazones flotantes
         function crearCorazonesFlotantes() {
             const pantalla = document.getElementById('pantallaFinal');
             const cantidad = 30;
 
             for(let i=0; i<cantidad; i++) {
-                const corazon = document.createElement('img');
+                const corazon = document.createElement('div');
                 corazon.classList.add('corazon-flotante');
-                corazon.src = 'https://cdn-icons-png.flaticon.com/512/1077/1077037.png';
-                corazon.alt = 'Corazón flotante';
                 
                 corazon.style.left = `${Math.random() * 100}vw`;
                 corazon.style.animationDelay = `${Math.random() * 5}s`;
                 corazon.style.width = `${15 + Math.random() * 15}px`;
-                corazon.style.height = 'auto';
+                corazon.style.height = corazon.style.width;
                 
                 pantalla.appendChild(corazon);
             }
         }
 
-        // Mostrar pantalla final
         function mostrarPantallaFinal() {
             document.querySelectorAll('.seccion, .seccion-1').forEach(seccion => {
                 seccion.classList.remove('mostrar');
