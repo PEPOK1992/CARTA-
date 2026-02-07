@@ -158,7 +158,6 @@
             cursor: pointer;
             font-family: 'Dancing Script', cursive;
             font-weight: 700;
-            transition: all 0.3s ease;
         }
 
         .btn-si {
@@ -166,18 +165,9 @@
             color: white;
         }
 
-        .btn-si-grande {
-            padding: 18px 35px;
-            font-size: 1.5rem;
-        }
-
-        .btn-si-muy-grande {
-            padding: 25px 45px;
-            font-size: 2rem;
-        }
-
         .btn-si:hover {
             background-color: #b02a68;
+            transform: scale(1.05);
         }
 
         .btn-no {
@@ -250,10 +240,6 @@
                 min-height: 100vh;
             }
 
-            .seccion-1 .titulo-principal {
-                font-size: 2.5rem;
-            }
-
             .titulo-principal {
                 font-size: 2rem;
                 margin-bottom: 20px;
@@ -266,16 +252,6 @@
 
             .frase {
                 font-size: 1.2rem;
-            }
-
-            .btn-si-grande {
-                padding: 15px 30px;
-                font-size: 1.2rem;
-            }
-
-            .btn-si-muy-grande {
-                padding: 20px 40px;
-                font-size: 1.5rem;
             }
         }
 
@@ -292,29 +268,28 @@
         /* Estilos para la última sección */
         .pantalla-final .foto-contenedor {
             display: flex;
-            flex-direction: row;
-            justify-content: center;
+            flex-direction: row; /* Alinear las imágenes horizontalmente */
+            justify-content: center; /* Centrar las imágenes */
             align-items: center;
-            flex-wrap: wrap;
+            flex-wrap: wrap; /* Permitir que las imágenes se envuelvan a la siguiente línea */
         }
 
         .pantalla-final .foto-personalizada {
-            max-width: 30%;
-            margin: 10px;
+            max-width: 30%; /* Imágenes más pequeñas */
+            margin: 10px; /* Espacio entre las imágenes */
         }
 
         .pantalla-final .texto-final {
-            font-size: 2rem;
+            font-size: 2rem; /* Ajustar el tamaño del texto */
             margin-bottom: 20px;
         }
-
         /* Estilos específicos para la sección 1 */
         .seccion-1 .titulo-principal {
-            font-size: 3rem;
+            font-size: 3rem; /* Texto más grande */
         }
 
         .seccion-1 .foto-contenedor {
-            margin-bottom: 30px;
+            margin-bottom: 30px; /* Espacio adicional debajo de la imagen */
         }
     </style>
 </head>
@@ -390,123 +365,57 @@
             <p class="texto-largo">
                 Prometemos no pelear, y si pasa, nos arreglaremos rápido. Prometemos dormir siempre en llamada, que si algo nos molesta, siempre lo hablaremos. Prometemos no dejarnos de amar.
             </p>
-            <div class="corazon-continuar" onclick="mostrarSeccion(7)">
-                <div class="corazon-icono"></div>
-                <span class="texto-continuar">Siguiente</span>
-            </div>
-        </div>
-
-        <!-- Sección 7 -->
-        <div class="seccion" id="seccion7">
-            <h2 class="titulo-principal">Cada día a tu lado es un regalo</h2>
-            <div class="foto-contenedor">
-                <img src="https://i.imgur.com/LfzhbS2.jpeg" alt="Momentos juntos" class="foto-personalizada foto-animada">
-                <p class="foto-texto">Mis momentos favoritos son los que compartimos</p>
-            </div>
-            <p class="texto-largo">
-                Me encanta cómo nos entendemos sin necesidad de palabras, cómo reímos juntos de las cosas más tontas y cómo siempre estamos ahí el uno para el otro. Eres mi refugio, mi felicidad y mi razón de sonreír todos los días.
-            </p>
-            <div class="corazon-continuar" onclick="mostrarSeccion(8)">
-                <div class="corazon-icono"></div>
-                <span class="texto-continuar">Siguiente</span>
-            </div>
-        </div>
-
-        <!-- Sección 8 -->
-        <div class="seccion" id="seccion8">
-            <h2 class="titulo-principal">¡Ahhhh por cierto me olvidaba...</h2>
-            <div class="foto-contenedor">
-                <img src="https://i.imgur.com/LfzhbS2.jpeg" alt="Sorpresa" class="foto-personalizada foto-animada">
-                <p class="foto-texto">Hay algo que quiero preguntarte...</p>
-            </div>
-            <p class="texto-largo">
-                He estado pensando en ello desde hace tiempo y no quería dejarlo pasar. Sabes que para mí cada momento contigo es especial, pero hay una fecha en particular que me gustaría compartir contigo de una manera muy especial.
-            </p>
-            <div class="corazon-continuar" onclick="mostrarSeccion(9)">
-		<div class="corazon-icono"></div>
-                <span class="texto-continuar">Siguiente</span>
-            </div>
-        </div>
-        <!-- Sección 9 -->
-        <div class="seccion" id="seccion9">
-            <h2 class="titulo-principal">¿Quieres ser mi San Valentín?</h2>
-            <div class="opciones" id="opcionesSanValentin">
-                <button class="btn btn-si" id="btnSi" onclick="mostrarSeccion(10)">Sí ❤️</button>
-                <button class="btn btn-no" id="btnNo" onclick="primeraVezNo()">No...</button>
-            </div>
-        </div>
-
-        <!-- Sección 10 -->
-        <div class="seccion" id="seccion10">
-            <h2 class="titulo-principal">¡Lo sabía! Te amooo ❤️❤️❤️</h2>
-            <div class="foto-contenedor">
-                <img src="https://i.imgur.com/LfzhbS2.jpeg" alt="Te amo" class="foto-personalizada foto-animada">
-                <p class="foto-texto">¡Serás mi San Valentín y el amor de mi vida siempre!</p>
-            </div>
-            <p class="texto-largo">
-                Ya sabía que dirías que sí, mi amor. Prometo hacerte el San Valentín más bonito que nunca, lleno de cariño, detalles y todo el amor que te tengo en mi corazón. Te quiero más de lo que las palabras pueden expresar. ¡Eres mi todo!
-            </p>
             <div class="corazon-continuar" onclick="mostrarPantallaFinal()">
                 <div class="corazon-icono"></div>
-                <span class="texto-continuar">Ver final</span>
+                <span class="texto-continuar">Acepto</span>
             </div>
         </div>
-    </div>
 
-    <!-- Pantalla final con corazones flotantes -->
-    <div class="pantalla-final" id="pantallaFinal">
-        <h2 class="texto-final">¡TE AMO MUCHO MI AMOR!</h2>
-        <div class="foto-contenedor">
-            <img src="https://i.imgur.com/LfzhbS2.jpeg" alt="Nuestro amor" class="foto-personalizada">
+        <!-- Pantalla final -->
+        <div class="pantalla-final" id="pantallaFinal">
+            <div class="texto-final">TE AMO, AMOR DE MI VIDA ❤️</div>
+            <div class="foto-contenedor" style="z-index: 10;">
+                <img src="https://i.imgur.com/LfzhbS2.jpeg" alt="Nuestro amor" class="foto-personalizada foto-animada">
+                <img src="https://i.imgur.com/LfzhbS2.jpeg" alt="Nuestro amor" class="foto-personalizada foto-animada">
+                <img src="https://i.imgur.com/LfzhbS2.jpeg" alt="Nuestro amor" class="foto-personalizada foto-animada">
+            </div>
         </div>
     </div>
 
     <script>
-        // Función para mostrar la sección seleccionada
-        function mostrarSeccion(numeroSeccion) {
-            // Ocultar todas las secciones
-            const secciones = document.querySelectorAll('.seccion, .seccion-1');
-            secciones.forEach(seccion => {
-                seccion.classList.remove('mostrar');
-            });
+        let seccionActual = 1;
 
-            // Mostrar la sección solicitada
-            document.getElementById(`seccion${numeroSeccion}`).classList.add('mostrar');
-            // Scroll hacia arriba
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        // Primera vez que se presiona "No"
-        function primeraVezNo() {
-            const opciones = document.getElementById('opcionesSanValentin');
-            opciones.innerHTML = `
-                <button class="btn btn-si btn-si-grande" id="btnSi" onclick="mostrarSeccion(10)">Sí ❤️</button>
-                <button class="btn btn-no" id="btnNo" onclick="segundaVezNo()">¿Estás segura amor?</button>
-            `;
-        }
-
-        // Segunda vez que se presiona "No"
-        function segundaVezNo() {
-            const opciones = document.getElementById('opcionesSanValentin');
-            opciones.innerHTML = `
-                <button class="btn btn-si btn-si-muy-grande" id="btnSi" onclick="mostrarSeccion(10)">Sí ❤️</button>
-                <button class="btn btn-no" id="btnNo" onclick="mostrarSeccion(10)">¡Claro que sí! ❤️</button>
-            `;
-        }
-
-        // Mostrar pantalla final con corazones flotantes
-        function mostrarPantallaFinal() {
-            const pantallaFinal = document.getElementById('pantallaFinal');
-            pantallaFinal.style.display = 'flex';
-            
-            // Crear corazones flotantes
-            for (let i = 0; i < 50; i++) {
-                const corazon = document.createElement('div');
-                corazon.classList.add('corazon-flotante');
-                corazon.style.left = `${Math.random() * 100}vw`;
-                corazon.style.animationDelay = `${Math.random() * 5}s`;
-                pantallaFinal.appendChild(corazon);
+        function mostrarSeccion(num) {
+            if (num > seccionActual) {
+                document.querySelectorAll('.seccion, .seccion-1').forEach(s => {
+                    s.classList.remove('mostrar');
+                    s.style.display = 'none';
+                });
+                const seccionDestino = document.getElementById(`seccion${num}`);
+                seccionDestino.style.display = 'block';
+                seccionDestino.classList.add('mostrar');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                seccionActual = num;
             }
+        }
+
+        function moverBotonNo(event) {
+            const btn = event.target;
+            const maxX = window.innerWidth - btn.offsetWidth - 20;
+            const maxY = window.innerHeight - btn.offsetHeight - 20;
+            btn.style.left = `${Math.random() * maxX}px`;
+            btn.style.top = `${Math.random() * maxY}px`;
+            btn.innerText = '¡No puedes escapar! 😜';
+        }
+
+        function mostrarPantallaFinal() {
+            document.querySelectorAll('.seccion, .seccion-1').forEach(s => {
+                s.classList.remove('mostrar');
+                s.style.display = 'none';
+            });
+            const final = document.getElementById('pantallaFinal');
+            final.style.display = 'flex';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
 </body>
