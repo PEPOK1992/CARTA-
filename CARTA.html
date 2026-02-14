@@ -294,6 +294,9 @@
     </style>
 </head>
 <body>
+    <audio id="musicaFondo" loop>
+        <source src="musica.mp3" type="audio/mpeg">
+    </audio>
     <div class="contenedor-principal">
         <!-- Sección 1 -->
         <div class="seccion-1 mostrar" id="seccion1">
@@ -425,6 +428,10 @@
 
         function mostrarSeccion(num) {
             if (num > seccionActual) {
+                const musica = document.getElementById("musicaFondo");
+                if (musica.paused) {
+                    musica.play();
+                }
                 document.querySelectorAll('.seccion, .seccion-1').forEach(s => {
                     s.classList.remove('mostrar');
                     s.style.display = 'none';
@@ -459,6 +466,7 @@
 </body>
 
 </html>
+
 
 
 
